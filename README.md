@@ -31,4 +31,5 @@ The application fully rensponsive for all the screen sizes.
 
 
 
-Link to the deployed application: 
+Link to the deployed application: https://azzaabdelrahman.github.io/Password-Generator/ 
+
