@@ -100,7 +100,7 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
-  do {   passwordLength = prompt("Choose a password length between 8 and 128")
+  do {   passwordLength = prompt("Choose a password length between 8 and 128 characters")
 
   if (passwordLength === null) {
     return
