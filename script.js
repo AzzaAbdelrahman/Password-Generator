@@ -100,11 +100,56 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
+  do {   passwordLength = prompt("Choose a password length by choosing a number between 8 and 128")
+
+  if (passwordLength === null) {
+    return
+  }
+
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert("You must choose a number between 8 and 128")
+  }
+
+} while (passwordLength < 8 || passwordLength > 128 || passwordLength != parseInt(passwordLength));
+
+finalPassword = ""
+
+do {
+
+  var lowercase = confirm("Include Lowercase Characters in you password?")
+  var uppercase = confirm("Include Uppercase Characters in you password?")
+  var numeric = confirm("Include Numeric Characters in you password?")
+  var specialChar = confirm("Include Special Characters in you password? ($@%&*, etc)")
+
+  if (lowercase) {
+    finalPassword += lowerCasedCharacters.join("")
+  }
+  if (uppercase) {
+    finalPassword += upperCasedCharacters.join("")
+  }
+  if (numeric) {
+    finalPassword += numericCharacters.join("")
+  }
+  if (specialChar) {
+    finalPassword += specialCharacters.join("")
+  }
+
+  if (finalPassword === "") {
+    if (!confirm('You need to choose at least one "Character Type" or click "Cancel" to exit')) {
+      return
+    }
+  }
+
+} while (finalPassword === "");
 
 }
 
+
+
+
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
+
 
 // Write password to the #password input
 function writePassword() {
@@ -114,5 +159,16 @@ function writePassword() {
   passwordText.value = password;
 }
 
+
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
+function copyToClipboard() {
+  let copiedPass  = document.getElementById("password");
+  let passwordCopied = copiedPass.value
+  navigator.clipboard.writeText(passwordCopied).then(() => {
+    alert("The password has been copied to clipboard!");
+  }, () => {
+    alert("The password has not been copied, try again");
+  });
+}
