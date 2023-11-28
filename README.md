@@ -6,7 +6,7 @@ The aim of this was to create Password Generator that generates a password when 
 
 When the button is clicked, the application presents a series of prompts for password criteria:
 
-Length of password:
+# Length of password:
 
 At least 8 characters but no more than 128.
 Character types to choose from:
@@ -19,7 +19,7 @@ Uppercase
 
 Numeric
 
-Special characters ($@%&*, etc.)
+# Special characters ($@%&*, etc.)
 
 The code is also validate for each input so at least one character type should be selected.
 
